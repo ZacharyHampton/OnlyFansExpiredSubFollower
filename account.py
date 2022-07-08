@@ -1,8 +1,6 @@
 import sys
-from dataclasses import dataclass
 import requests
 import requests.cookies
-from http.cookiejar import Cookie, CookieJar
 from urllib.parse import urlparse
 import hashlib
 import time
