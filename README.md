@@ -14,7 +14,7 @@
 3. Go to network tab.
 4. Turn on XHR Filtering
 5. Refresh page, and view any request made to *.onlyfans.com
-6. You will be able to see the request headers. The cookies, user-agent & x-bc header are all there.
+6. You will be able to see the request headers. The cookies, user-agent & x-bc headers are all there.
 
 ## Important:
 Make sure all of these values don't include their key when inputted into the program ("Cookies: ", "x-bc ", "User-Agent: ")
