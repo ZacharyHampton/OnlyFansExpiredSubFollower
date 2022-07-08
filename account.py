@@ -92,14 +92,20 @@ class Account:
             h = self._createSignedHeaders(u, 'https://onlyfans.com/my/subscribers/expired')
             r = self._Session.post(u, headers=h, json={"source": "fans"})
             if r.status_code != 200:
-                if r.json()['error']['message'] == "Daily limit exceeded. Please try again later.":
+                errorMessage = r.json()['error']['message']
+
+                if errorMessage == "Daily limit exceeded. Please try again later.":
                     print('Daily limit reached.')
                     sys.exit(0)
 
-                if r.json()['error']['message'] == "Too many requests...":
+                if errorMessage == "Too many requests...":
                     print('Too many requests.')
                     time.sleep(5)
                     subscribeToUser(userId)
+
+                if errorMessage == "User can not add subscriber.":
+                    print('Specified user does not allow followers.')
+                    return
 
                 print(f'Failed to follow {account["username"]}, Error: {r.status_code}, response text: {r.text}')
                 time.sleep(1)
