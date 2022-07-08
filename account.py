@@ -9,9 +9,10 @@ import time
 
 
 class Account:
-    def __init__(self, cookies: str, xbcSha1: str):
+    def __init__(self, cookies: str, xbcSha1: str, userAgent: str):
         self.cookies: str = cookies
         self.xbcSha1: str = xbcSha1
+        self.userAgent: str = userAgent
         self._Session: requests.Session = requests.Session()
         self._addCookies()
 
