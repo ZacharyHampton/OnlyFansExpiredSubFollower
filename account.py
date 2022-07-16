@@ -107,6 +107,10 @@ class Account:
                     print('Specified user does not allow followers.')
                     return
 
+                if errorMessage == "User not found.":
+                    print('Specified user does not exist.')
+                    return
+
                 print(f'Failed to follow {account["username"]}, Error: {r.status_code}, response text: {r.text}')
                 time.sleep(1)
                 subscribeToUser(userId)
