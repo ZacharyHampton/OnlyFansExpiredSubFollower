@@ -1,4 +1,4 @@
-# OnlyFansExpiredSubFollower
+# Onlyfans Expired Subscriber Follower
 
 ### Requirements
 1. Download program using git clone or download as zip.
